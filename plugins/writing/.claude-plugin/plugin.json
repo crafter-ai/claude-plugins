@@ -1,0 +1,6 @@
+{
+  "name": "writing",
+  "description": "Clear, direct writing style for emails, docs, PRs, and chat",
+  "author": { "name": "Crafter AI" },
+  "license": "MIT"
+}

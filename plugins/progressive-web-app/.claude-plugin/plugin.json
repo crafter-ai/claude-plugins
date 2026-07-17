@@ -1,0 +1,6 @@
+{
+  "name": "progressive-web-app",
+  "description": "PWA asset generation",
+  "author": { "name": "Crafter AI" },
+  "license": "MIT"
+}

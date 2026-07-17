@@ -1,0 +1,27 @@
+{
+  "name": "crafter-ai",
+  "owner": { "name": "Crafter AI" },
+  "description": "Claude Code skills grouped by domain: software development, Ruby on Rails, writing, and PWAs",
+  "plugins": [
+    {
+      "name": "software-development",
+      "source": "./plugins/software-development",
+      "description": "Language-agnostic software development skills"
+    },
+    {
+      "name": "ruby-on-rails",
+      "source": "./plugins/ruby-on-rails",
+      "description": "Ruby on Rails skills"
+    },
+    {
+      "name": "writing",
+      "source": "./plugins/writing",
+      "description": "Clear, direct writing style for emails, docs, PRs, and chat"
+    },
+    {
+      "name": "progressive-web-app",
+      "source": "./plugins/progressive-web-app",
+      "description": "PWA asset generation"
+    }
+  ]
+}
