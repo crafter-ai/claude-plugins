@@ -7,7 +7,7 @@ Claude Code plugins with skills we use daily. Grouped by domain so you enable on
 | Plugin | What's inside |
 |---|---|
 | `software-development` | Language-agnostic dev skills. Currently: record feature demo videos with Playwright MCP, with subtitles. Bundles a pre-configured Playwright MCP server (video recording enabled), so no manual MCP setup. Needs Node; ffmpeg and the Chromium binary are installed on first use. |
-| `ruby-on-rails` | Ruby on Rails skills. Empty for now, content coming. |
+| `ruby-on-rails` | Ruby on Rails coding rules: models, tests, e2e tests, general Ruby. Run `/ruby-on-rails:install-rules` once per project to copy them into `.claude/rules/` (plugins can't auto-load rules), commit, and every dev gets them scoped by file path. |
 | `writing` | Writing style guide for emails, docs, PRs, commits and chat. Direct, no AI-sounding text. |
 | `progressive-web-app` | Generate PWA icons, splash screens and manifest entries from a single source image. |
 

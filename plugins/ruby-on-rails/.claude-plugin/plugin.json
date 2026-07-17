@@ -1,6 +1,6 @@
 {
   "name": "ruby-on-rails",
-  "description": "Ruby on Rails skills",
+  "description": "Ruby on Rails coding rules, installed into your project with /ruby-on-rails:install-rules",
   "author": { "name": "Crafter AI" },
   "license": "MIT"
 }
