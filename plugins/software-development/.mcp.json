@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@0.0.78",
+        "--config", "${CLAUDE_PLUGIN_ROOT}/skills/feature-demo-video/playwright-mcp-video.json",
+        "--output-dir", "/tmp/playwright-mcp-videos",
+        "--output-max-size", "2000000000"
+      ]
+    }
+  }
+}

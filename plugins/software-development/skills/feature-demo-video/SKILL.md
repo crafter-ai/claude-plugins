@@ -61,16 +61,21 @@ Playwright's native `contextOptions`. This skill ships that file:
 `/tmp/playwright-mcp-videos` — the machine's `/tmp`, so recordings never pollute the repo and get
 wiped on reboot).
 
-**First check if it's already wired**: look at the `playwright` server args in `~/.claude.json`
-(`mcpServers.playwright.args`). If they already include `--config=...playwright-mcp-video.json`,
-recording is live — skip to Phase 0.2, no reconnect needed. This setup is permanent by design:
-every session records to `/tmp` at negligible cost, and in exchange no future demo needs the
-manual reconnect dance.
+**Zero setup when installed as a plugin**: this plugin bundles a `playwright` MCP server (see the
+plugin's `.mcp.json`) that already boots with this config — recording is on whenever the browser
+is driven through the plugin's playwright tools. If those tools are available, skip to Phase 0.2.
 
-If not wired yet, add to the args:
+**If using a standalone playwright MCP server instead**, check whether it's already wired: look at
+the `playwright` server args in `~/.claude.json` (`mcpServers.playwright.args`). If they already
+include `--config=...playwright-mcp-video.json`, recording is live — skip to Phase 0.2, no
+reconnect needed. This setup is permanent by design: every session records to `/tmp` at negligible
+cost, and in exchange no future demo needs the manual reconnect dance.
+
+If not wired yet, add to the args (the config path is inside the installed plugin — resolve
+`${CLAUDE_PLUGIN_ROOT}` to this skill's parent plugin directory):
 
 ```
---config=<repo clone path>/.claude/skills/feature-demo-video/playwright-mcp-video.json
+--config=${CLAUDE_PLUGIN_ROOT}/skills/feature-demo-video/playwright-mcp-video.json
 --output-dir=/tmp/playwright-mcp-videos
 --output-max-size=2000000000
 ```
@@ -94,6 +99,10 @@ cannot reconnect it yourself. This happens once per machine, not once per demo.
 
 Not installed by default; needed for duration probing, sync validation, subtitle burning, and
 speed-ups: `sudo apt-get install -y ffmpeg` (unsandboxed).
+
+Also check the Playwright browser binary: if the MCP server errors on first navigation with a
+missing-browser message, run `npx playwright install chromium` (add `--with-deps` on a fresh
+Linux box).
 
 ### 3. Server and data
 
