@@ -23,7 +23,9 @@ Install what you need:
 
 ```
 /plugin install software-development@crafter-ai
+/plugin install ruby-on-rails@crafter-ai
 /plugin install writing@crafter-ai
+/plugin install progressive-web-app@crafter-ai
 ```
 
 ## Auto-install for your whole team
