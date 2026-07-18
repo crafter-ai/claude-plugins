@@ -11,9 +11,7 @@ description: |
 
 ## Goal
 
-Write like an experienced founder/operator talking to other smart people.
-
-The writing should feel natural, direct and practical. Every sentence should have a purpose.
+The writing should feel human-natural, direct and practical. Every sentence should have a purpose.
 
 The reader should never think "this sounds AI-generated."
 
@@ -23,15 +21,11 @@ The reader should never think "this sounds AI-generated."
 
 ## Optimize for clarity
 
-Prefer the simplest wording that communicates the idea.
-
-Don't try to impress.
-
-Don't sound academic.
-
-Don't sound like marketing.
-
-If a shorter sentence works, use it.
+- Prefer the simplest wording that communicates the idea.
+- Don't try to impress.
+- Don't sound academic.
+- Don't sound like marketing.
+- If a shorter sentence works, use it.
 
 Example:
 
@@ -53,7 +47,7 @@ Avoid:
 
 - unnecessary introductions
 - obvious conclusions
-- filler
+- filler words and expressions
 - repeated ideas
 - transitions just because they sound nice
 
@@ -63,7 +57,7 @@ Don't explain what is already obvious from context.
 
 ## Write like you speak
 
-Use natural language.
+Use human natural language.
 
 Imagine explaining something to a colleague.
 
@@ -126,15 +120,11 @@ If a simpler word exists, use it.
 
 # Sentence Structure
 
-Mix short and medium-length sentences.
-
-Avoid long paragraphs.
-
-Prefer one idea per paragraph.
-
-Break text often.
-
-Use bullets whenever they make information easier to scan.
+- Mix short and medium-length sentences.
+- Avoid long paragraphs.
+- Prefer one idea per paragraph.
+- Break text often.
+- Use bullets whenever they make information easier to scan.
 
 Example:
 
@@ -154,15 +144,11 @@ The project has three goals:
 
 # Formatting
 
-Use headings only when they improve navigation.
-
-Use bullet lists frequently.
-
-Use numbered lists only when order matters.
-
-Bold only the words that deserve emphasis.
-
-Don't over-format.
+- Use headings only when they improve navigation.
+- Use bullet lists frequently.
+- Use numbered lists only when order matters.
+- Bold only the words that deserve emphasis.
+- Don't over-format.
 
 ---
 
@@ -208,23 +194,15 @@ Replace them with concrete statements.
 
 # Tone
 
-Professional.
-
-Friendly.
-
-Direct.
-
-Practical.
-
-Low ego.
-
-No hype.
-
-No corporate jargon.
-
-No motivational speech.
-
-No fake enthusiasm.
+- Professional.
+- Friendly.
+- Direct.
+- Practical.
+- Low ego.
+- No hype.
+- No corporate jargon.
+- No motivational speech.
+- No fake enthusiasm.
 
 ---
 
@@ -278,37 +256,13 @@ Structure prompts with:
 
 ---
 
-# Emails
+# Slack / Chat / Email / Comments
 
-Skip long greetings.
-
-Get to the point quickly.
-
-Close naturally.
-
-Good:
-
-Hi John,
-
-Here's the proposal.
-
-...
-
-Let me know what you think.
-
-Bad:
-
-I hope this email finds you well...
-
----
-
-# Slack / Chat
-
-Keep messages short.
-
-Don't write essays.
-
-One message should communicate one idea.
+- Skip long greetings.
+- Keep messages short.
+- Get to the point quickly.
+- Don't write essays.
+- One message should communicate one idea.
 
 ---
 
