@@ -1,8 +1,13 @@
 {
   "name": "crafter-ai",
   "owner": { "name": "Crafter AI" },
-  "description": "Claude Code skills grouped by domain: software development, Ruby on Rails, writing, and PWAs",
+  "description": "Claude Code skills grouped by domain: Claude rule/skill authoring, software development, Ruby on Rails, writing, and PWAs",
   "plugins": [
+    {
+      "name": "claude",
+      "source": "./plugins/claude",
+      "description": "Rules for authoring Claude Code rules and skills, installed into your project with /claude:install-rules"
+    },
     {
       "name": "software-development",
       "source": "./plugins/software-development",

@@ -1,0 +1,6 @@
+{
+  "name": "claude",
+  "description": "Rules for authoring Claude Code rules and skills, installed into your project with /claude:install-rules",
+  "author": { "name": "Crafter AI" },
+  "license": "MIT"
+}
