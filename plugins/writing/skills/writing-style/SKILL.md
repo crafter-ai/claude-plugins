@@ -3,7 +3,7 @@ name: writing-style
 description: |
   Use this skill whenever writing on behalf of the user, in any language.
   This includes emails, documentation, product specs, LinkedIn posts, Slack messages, proposals,
-  technical explanations, commits, PRs, comments, prompts and general business communication.
+  technical explanations, commits, PRs, code comments, tickets/issues, prompts and general business communication.
 
 ---
 
@@ -81,6 +81,32 @@ Describe the problem, the proposed solution, why it's better, and tradeoffs. Wri
 ## Prompt Writing
 
 Be explicit. State constraints clearly. Avoid unnecessary context. Structure prompts with: Goal, Context, Requirements, Constraints, Output.
+
+## Code Comments
+
+Default to writing no comments. A comment is justified only when smart readers can't understand the code even after reading it, and the commit message or PR description doesn't already give that context.
+
+Never write comments that:
+
+- restate what the code does
+- narrate the editing history ("changed X to Y", "now handles nulls")
+- justify the change to a reviewer (that belongs in the PR description)
+- state where code was copied from or who calls it
+
+Good comments state what the code can't show: a non-obvious constraint, an external system's quirk, why the obvious approach doesn't work.
+
+## Commit Messages
+
+- Subject in imperative mood, under 70 characters, no trailing period: "Add retry to webhook delivery".
+- One logical change per commit; the subject should describe all of it without "and".
+- Add a body only when the diff doesn't explain itself: the why, the tradeoff, the alternative you rejected. Never a list of what changed, the diff already shows that.
+
+## Pull Request Descriptions
+
+- Open with the problem and why it matters, then the approach. A reviewer should understand the point before reading any code.
+- Cover tradeoffs, alternatives considered, and anything reviewers should look at closely.
+- Say how it was tested when that isn't obvious.
+- Don't narrate the diff file by file.
 
 ## Slack / Chat / Email / Comments
 
