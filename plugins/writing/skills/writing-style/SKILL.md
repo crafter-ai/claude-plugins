@@ -1,9 +1,10 @@
 ---
 name: writing-style
 description: |
-  Use this skill whenever writing on behalf of the user, in any language.
-  This includes emails, documentation, product specs, LinkedIn posts, Slack messages, proposals,
-  technical explanations, commits, PRs, code comments, tickets/issues, prompts and general business communication.
+  Use this skill for ANY text writing, whether generating content or writing on
+  behalf of the user, in any language. This includes emails, documentation,
+  product specs, LinkedIn posts, Slack messages, proposals, technical explanations,
+  commits, PRs, code comments, tickets/issues, prompts and general business communication.
 
 ---
 
@@ -70,17 +71,35 @@ The project has three goals:
 
 Professional, friendly, direct, practical. Low ego, no hype, no corporate jargon, no fake enthusiasm.
 
+## Language
+
+When the domain has terms of art in another language (legal, tax, regulatory
+concepts), don't force them into the writing language.
+
+For each term, ask: does the writing language have a real word for it, one
+a native would write unprompted and your readers actually use for the
+concept, ideally already a code identifier?
+
+- Yes: use it as the working term; give the original in italics in
+  parentheses at first use: "statement (*extrato*)".
+- No: the original is the working term. Never invent a calque. Gloss in
+  italics at first use when it isn't obvious: "competência (*the
+  reference month*)".
+
+One working term per concept for the whole text. The parenthetical is a
+translation, not a synonym: it appears once and is never reused.
+
+- Quote literal artifacts verbatim: UI labels, API fields, error messages
+  are data. Translating them breaks grep.
+- Domain-dense passages go in the domain's language. The tell: a sentence
+  needing three or more glosses, or a paragraph where the nouns are mostly
+  domain terms and the writing language only supplies the connectives. If
+  that describes the whole document, switch the whole document. Multi-word
+  terms keep their native word order. Code identifiers stay untranslated.
+
 ## Technical Writing
 
 Assume the reader is intelligent; don't over-explain basic concepts. Focus on what, why, tradeoffs, and implementation details. Prefer examples over abstract explanations.
-
-## Product Writing
-
-Describe the problem, the proposed solution, why it's better, and tradeoffs. Write like an engineer explaining a decision, not marketing.
-
-## Prompt Writing
-
-Be explicit. State constraints clearly. Avoid unnecessary context. Structure prompts with: Goal, Context, Requirements, Constraints, Output.
 
 ## Code Comments
 
@@ -95,22 +114,10 @@ Never write comments that:
 
 Good comments state what the code can't show: a non-obvious constraint, an external system's quirk, why the obvious approach doesn't work.
 
-## Commit Messages
+## Channel guides
 
-- Subject in imperative mood, under 70 characters, no trailing period: "Add retry to webhook delivery".
-- One logical change per commit; the subject should describe all of it without "and".
-- Add a body only when the diff doesn't explain itself: the why, the tradeoff, the alternative you rejected. Never a list of what changed, the diff already shows that.
-
-## Pull Request Descriptions
-
-- Open with the problem and why it matters, then the approach. A reviewer should understand the point before reading any code.
-- Cover tradeoffs, alternatives considered, and anything reviewers should look at closely.
-- Say how it was tested when that isn't obvious.
-- Don't narrate the diff file by file.
-
-## Slack / Chat / Email / Comments
-
-Skip long greetings. Get to the point quickly. One message, one idea.
+Writing a Slack/chat message, email, or GitHub comment? Read
+[messaging.md](messaging.md) in this skill's directory too.
 
 ## Editing Loop
 
