@@ -11,7 +11,7 @@
     {
       "name": "software-development",
       "source": "./plugins/software-development",
-      "description": "Language-agnostic software development skills"
+      "description": "Language-agnostic software development skills and coding rules, rules installed with /software-development:install-rules"
     },
     {
       "name": "ruby-on-rails",
