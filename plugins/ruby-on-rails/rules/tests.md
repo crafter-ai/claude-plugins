@@ -16,3 +16,9 @@ paths:
 
 - Journey tests (multi-step flows spanning multiple actions) should keep the whole flow in a single test instead of separate tests that would duplicate the preceding steps
 - Group assertions after each meaningful step. In RSpec, use an `aggregate_failures` block with a label describing the step (e.g., `aggregate_failures "after creating the order" do`), so a failure mid-journey still reports subsequent assertion results. In minitest, a comment labeling each step's assertion group serves the same readability purpose.
+
+# Cross-cutting concerns
+
+- A behavior shared across many classes or call sites (via a common ancestor, included module, hook, or middleware) is a cross-cutting concern — do not re-verify it in every test that happens to exercise it
+- Write one dedicated test for the shared behavior itself, using a single representative call site as its subject
+- All other tests that merely go through that shared behavior should assume it works and skip re-testing it
