@@ -1,7 +1,7 @@
 {
   "name": "crafter-ai",
   "owner": { "name": "Crafter AI" },
-  "description": "Claude Code skills grouped by domain: Claude rule/skill authoring, software development, Ruby on Rails, writing, and PWAs",
+  "description": "Claude Code skills grouped by domain: Claude rule/skill authoring, software development, Ruby on Rails, writing, PWAs, and marketing",
   "plugins": [
     {
       "name": "claude",
@@ -27,6 +27,11 @@
       "name": "progressive-web-app",
       "source": "./plugins/progressive-web-app",
       "description": "PWA asset generation"
+    },
+    {
+      "name": "marketing",
+      "source": "./plugins/marketing",
+      "description": "Marketing skills: naming, positioning, and brand strategy"
     }
   ]
 }

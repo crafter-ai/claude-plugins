@@ -11,6 +11,7 @@ Claude Code plugins with skills we use daily. Grouped by domain so you enable on
 | `ruby-on-rails` | Ruby on Rails coding rules: models, tests, e2e tests, general Ruby. Run `/ruby-on-rails:install-rules project` once per project to copy them into `.claude/rules/` (plugins can't auto-load rules), commit, and every dev gets them scoped by file path — or `/ruby-on-rails:install-rules user` to copy them into `~/.claude/rules/` instead, so they apply to every project on your machine without committing anything. |
 | `writing` | Writing style guide for emails, docs, PRs, commits and chat. Direct, no AI-sounding text. |
 | `progressive-web-app` | Generate PWA icons, splash screens and manifest entries from a single source image. |
+| `marketing` | Brand naming with the Lexicon Branding method (`/marketing:brand-name-creator`): Diamond Exercise, outside-category word hunting, 1,000-name generation with sound symbolism and compounds, shortlist with the "new competitor" test. Includes a `domain-availability-checker` agent that checks .com, .app and .com.br against the registries' RDAP servers. |
 
 ## Install
 
@@ -28,6 +29,7 @@ Install what you need:
 /plugin install ruby-on-rails@crafter-ai
 /plugin install writing@crafter-ai
 /plugin install progressive-web-app@crafter-ai
+/plugin install marketing@crafter-ai
 ```
 
 ## Auto-install for your whole team
