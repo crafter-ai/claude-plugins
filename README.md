@@ -12,6 +12,7 @@ Claude Code plugins with skills we use daily. Grouped by domain so you enable on
 | `writing` | Writing style guide for emails, docs, PRs, commits and chat. Direct, no AI-sounding text. |
 | `progressive-web-app` | Generate PWA icons, splash screens and manifest entries from a single source image. |
 | `marketing` | Brand naming with the Lexicon Branding method (`/marketing:brand-name-creator`): Diamond Exercise, outside-category word hunting, 1,000-name generation with sound symbolism and compounds, shortlist with the "new competitor" test. Includes a `domain-availability-checker` agent that checks .com, .app and .com.br against the registries' RDAP servers. |
+| `product-design` | Logo design and iteration in SVG (`logo-designer`): concept rounds with side-by-side previews, then PNG export at standard sizes. Adapted from [neonwatty/logo-designer-skill](https://github.com/neonwatty/logo-designer-skill) (MIT). Needs an SVG-to-PNG converter (resvg, Inkscape or librsvg) for export. |
 
 ## Install
 
@@ -30,6 +31,7 @@ Install what you need:
 /plugin install writing@crafter-ai
 /plugin install progressive-web-app@crafter-ai
 /plugin install marketing@crafter-ai
+/plugin install product-design@crafter-ai
 ```
 
 ## Auto-install for your whole team
