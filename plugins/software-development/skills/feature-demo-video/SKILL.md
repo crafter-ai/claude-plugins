@@ -2,7 +2,7 @@
 name: feature-demo-video
 description: >
   Record a feature demo video by driving a web app with the Playwright MCP browser, with
-  step-by-step subtitles, producing three artifacts in the machine's /tmp: raw video (.webm),
+  step-by-step subtitles, producing three artifacts in ~/dropbox: raw video (.webm),
   subtitle file (.srt), and a burnt-in-subtitle video. Use whenever the user asks to "record a
   video" of a flow, a video demo for a PR/ticket, a recorded E2E test, subtitles on a test video,
   or to regenerate/speed-up/re-subtitle an existing demo video. Also covers the environment
@@ -23,9 +23,8 @@ instead.
 
 ## Artifacts (always these three, kept separate)
 
-Create everything under `/tmp/<slug>-video/` (the machine's `/tmp` — nothing lands in the repo;
-artifacts are ephemeral by design and vanish on reboot, which is fine since sharing happens right
-away).
+Create everything under `~/dropbox/<slug>-video/` (`mkdir -p` it) — nothing lands in the repo,
+and `~/dropbox` syncs to the user's own machine, so the files are there to watch and attach.
 
 **Deriving `<slug>`: tool-agnostic, ticket-first.** Look for an issue/ticket identifier tied to
 the current branch or PR — regardless of which tracker it comes from (Linear `ABC-123`, Jira
@@ -35,7 +34,7 @@ first. If no identifier pattern is found, fall back to a slugified branch name o
 for a branch `feature/proj-123-recurring-billing`:
 
 ```
-/tmp/proj-123-video/
+~/dropbox/proj-123-video/
 ├── steps.log        # raw timestamps (epoch|label) — input to regenerate subtitles
 ├── demo.webm        # raw video, original speed, NO subtitles
 ├── demo.srt         # subtitles, original-speed timings
@@ -127,7 +126,7 @@ Recorder rules that shape the script:
 - **Timestamp before each step.** Immediately before each action that becomes a subtitle:
 
   ```bash
-  echo "$(date +%s.%N)|<step label>" >> /tmp/<slug>-video/steps.log
+  echo "$(date +%s.%N)|<step label>" >> ~/dropbox/<slug>-video/steps.log
   ```
 
   Labels are the literal subtitles — write them for the person watching ("App opened on company
@@ -148,7 +147,7 @@ Recorder rules that shape the script:
 - Close the browser when done. The time between the end of the flow and `browser_close` is also
   recorded — don't linger.
 - After `browser_close`, identify the newly created `.webm` in `/tmp/playwright-mcp-videos`
-  (newest mtime) and **copy it to `/tmp/<slug>-video/demo.webm`** — the per-slug folder is the
+  (newest mtime) and **copy it to `~/dropbox/<slug>-video/demo.webm`** — the per-slug folder is the
   working set for iteration; the recorder's own folder gets auto-evicted.
 
 ## Phase 2 — Subtitles (.srt)
@@ -201,9 +200,8 @@ Validate the burn by extracting a frame at a subtitled moment and reading the im
   the dev's next action is grabbing a file, so make it copy-paste ready. Point out which file is
   the "attach this one" default (usually `demo-legendado.webm` or the sped-up burnt-in variant)
   and list the others (raw video, .srt) as iteration sources, each with its duration.
-- Remind that `/tmp` is wiped on reboot — if the demo matters beyond today, share/attach it now.
-- Leave the MCP args in place — the recording setup is permanent (Phase 0.1); `/tmp` and
-  `--output-max-size` handle cleanup.
+- Leave the MCP args in place — the recording setup is permanent (Phase 0.1); `--output-max-size`
+  handles cleanup of the raw recordings.
 - Stop the dev server.
 - If the video is for a PR: inline attachment in the description often only works via
   drag-and-drop in the web UI (many trackers' APIs have no attachment upload) — give the dev the
