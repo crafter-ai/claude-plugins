@@ -69,10 +69,11 @@ validate :validate_start_date_before_end_date
 
 ## Prevent Destruction
 
-When a model should never be destroyed, use the pattern below using `before_destroy` callback:
+When a model should never be destroyed, use the pattern below using `before_destroy` callback.
+Use `prepend: true` so the guard runs before the destroy callbacks of `dependent: :destroy` associations, which would otherwise destroy children (and fire their non-transactional side effects) before the abort.
 
 ```ruby
-before_destroy :prevent_destroy
+before_destroy :prevent_destroy, prepend: true
 
 private
 
