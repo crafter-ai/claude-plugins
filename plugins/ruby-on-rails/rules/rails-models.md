@@ -64,6 +64,8 @@ validate :validate_start_date_before_end_date
 # Callbacks
 
 - Enqueuing jobs should always be done in `after_commit`
+- Callbacks must reference a private method by name, never a block or lambda implemented inline
+- Prefer guard clauses inside the callback method over `if:`/`unless:` options on the callback declaration
 
 ## Prevent Destruction
 
