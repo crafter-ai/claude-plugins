@@ -21,13 +21,13 @@ paths:
 - Use `prefix` or `suffix` with the same name of the attribute.
   - The choice of prefix or suffix should be based on what reads better in english. Example:
     ```ruby
-    # Suffix - clearer when attribute is the key context
-    enum :status, %i[pending approved rejected], suffix: :status
+    # Prefix - clearer when attribute is the key context
+    enum :status, %i[pending approved rejected], prefix: :status
     order.status_pending?  # Reads naturally
     order.pending_status?  # Feels awkward
 
-    # Prefix - clearer when value is the main identity
-    enum :role, %i[owner admin manager], prefix: :role
+    # Suffix - clearer when value is the main identity
+    enum :role, %i[owner admin manager], suffix: :role
     user.admin_role?       # Reads naturally
     user.role_admin?       # Feels clunky
     ```
