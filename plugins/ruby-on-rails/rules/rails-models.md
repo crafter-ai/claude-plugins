@@ -7,30 +7,25 @@ paths:
 
 - ActiveRecord models inherit from `ApplicationRecord` directly or indirectly. Exception: if the project uses multiple databases and it has multiple base models.
 
-# Enum
+# Enums
 
-- Use string-based enums - the value is stored as string in the database.
-  ```ruby
-  enum :role, %i[owner admin manager].index_with(&:to_s), suffix: :role, validate: true
-  ```
-
+- Use string-backed enums, so the database stores the value as a string.
+- Pass `prefix` or `suffix` with the attribute's name, to avoid method name conflicts and make call sites readable.
+- Choose whichever of `prefix` or `suffix` reads better in English.
 - Enable validation (`validate: true`)
 
-- Use `prefix` or `suffix` to avoid method name conflicts and improve code readability
+Example:
+```ruby
+# Prefix - the attribute leads
+enum :status, %i[pending approved rejected].index_with(&:to_s), prefix: :status, validate: true
+order.status_pending?  # Reads naturally
+order.pending_status?  # Feels awkward
 
-- Use `prefix` or `suffix` with the same name of the attribute.
-  - The choice of prefix or suffix should be based on what reads better in english. Example:
-    ```ruby
-    # Prefix - clearer when attribute is the key context
-    enum :status, %i[pending approved rejected], prefix: :status
-    order.status_pending?  # Reads naturally
-    order.pending_status?  # Feels awkward
-
-    # Suffix - clearer when value is the main identity
-    enum :role, %i[owner admin manager], suffix: :role
-    user.admin_role?       # Reads naturally
-    user.role_admin?       # Feels clunky
-    ```
+# Suffix - the value leads
+enum :role, %i[owner admin manager].index_with(&:to_s), suffix: :role, validate: true
+user.admin_role?       # Reads naturally
+user.role_admin?       # Feels clunky
+```
 
 # Normalization
 
